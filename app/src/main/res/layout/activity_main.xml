@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is the layout file for your main screen. It uses a LinearLayout to arrange
+     elements vertically. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#121212"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Campus Safety"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- The main SOS Button. It's large and red to be easily accessible. -->
+    <Button
+        android:id="@+id/sosButton"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="SOS"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:background="@drawable/sos_button_background"
+        android:gravity="center"
+        app:backgroundTint="@color/sos_red"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Button for the "Safe Walk" feature. -->
+    <Button
+        android:id="@+id/safeWalkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Safe-Walk"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        app:backgroundTint="@color/button_blue"
+        android:textColor="@color/white"/>
+
+    <!-- Button for the "Incident Reporting" feature. -->
+    <Button
+        android:id="@+id/reportIncidentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Report an Incident"
+        android:padding="16dp"
+        app:backgroundTint="@color/button_grey"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
