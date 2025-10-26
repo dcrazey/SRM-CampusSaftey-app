@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This drawable defines the style for our main SOS button -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Sets the solid red color for the button -->
+    <solid android:color="@color/sos_red" />
+
+    <!-- Sets the rounded corner radius -->
+    <corners android:radius="12dp" />
+
+</shape>
+

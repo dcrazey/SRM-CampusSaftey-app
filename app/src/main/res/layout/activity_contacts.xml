@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:padding="16dp"
+    tools:context=".ContactsActivity">
+
+    <!-- Back Button (Added) -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="?attr/homeAsUpIndicator"
+        app:tint="@color/text_primary"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Back" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/backButton"
+        android:layout_alignBaseline="@id/backButton"
+        android:text="Emergency Contacts"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        />
+    <!-- Removed bottom margin, aligned with back button -->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contactsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/backButton"
+        android:layout_above="@+id/addContactLayout"
+        android:layout_marginTop="16dp"
+        />
+    <!-- Changed height to fill space between title and bottom layout -->
+
+    <LinearLayout
+        android:id="@+id/addContactLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/card_background"
+        android:padding="16dp">
+        <!-- Gave this layout an ID and aligned parent bottom -->
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact Name"
+            android:inputType="textPersonName"
+            android:backgroundTint="@color/accent_blue"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"/>
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/accent_blue"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"/>
+
+        <Button
+            android:id="@+id/addContactButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Contact"
+            android:background="@drawable/button_secondary_light"
+            android:textColor="@color/accent_blue"
+            app:backgroundTint="@null"
+            android:layout_marginTop="16dp"/>
+        <!-- Added app:backgroundTint="@null" to respect the drawable background -->
+    </LinearLayout>
+
+</RelativeLayout>
+

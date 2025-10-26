@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This layout defines a single row in our contacts RecyclerView -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/card_background"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp">
+
+    <!-- Contact Name -->
+    <TextView
+        android:id="@+id/contactNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/deleteContactButton"
+        android:text="Contact Name"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Contact Phone Number -->
+    <TextView
+        android:id="@+id/contactPhoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contactNameText"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/deleteContactButton"
+        android:text="+91 12345 67890"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp" />
+
+    <!-- Delete Button -->
+    <ImageView
+        android:id="@+id/deleteContactButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_menu_delete"
+        app:tint="@color/sos_red" />
+
+</RelativeLayout>
+

@@ -1,60 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This is the layout file for your main screen. It uses a LinearLayout to arrange
-     elements vertically. -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/background_light"
     android:padding="24dp"
-    android:gravity="center_horizontal"
-    android:background="#121212"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"> <!-- Corrected context -->
 
     <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Campus Safety"
-        android:textColor="@color/white"
+        android:textColor="@color/text_primary"
         android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="60dp"
-        android:layout_marginTop="20dp"/>
+        android:textStyle="bold" />
 
-    <!-- The main SOS Button. It's large and red to be easily accessible. -->
+    <TextView
+        android:id="@+id/subtitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextView"
+        android:text="Your personal safety companion."
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp" />
+
+    <!-- Main SOS Button -->
     <Button
         android:id="@+id/sosButton"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_primary_red"
+        android:elevation="12dp"
+        android:gravity="center"
         android:text="SOS"
         android:textColor="@color/white"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        android:background="@drawable/sos_button_background"
-        android:gravity="center"
-        app:backgroundTint="@color/sos_red"
-        android:layout_marginBottom="40dp"/>
+        android:textSize="60sp"
+        android:textStyle="bold" />
 
-    <!-- Button for the "Safe Walk" feature. -->
-    <Button
-        android:id="@+id/safeWalkButton"
+    <!-- Helper Text -->
+    <TextView
+        android:id="@+id/helperTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sosButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Press Volume Down 3 times for silent alert"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp" />
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Safe-Walk"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp"
-        app:backgroundTint="@color/button_blue"
-        android:textColor="@color/white"/>
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
-    <!-- Button for the "Incident Reporting" feature. -->
-    <Button
-        android:id="@+id/reportIncidentButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Report an Incident"
-        android:padding="16dp"
-        app:backgroundTint="@color/button_grey"
-        android:textColor="@color/white"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/contactsButton"
+            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="70dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/background_card_light"
+            android:text="My Contacts"
+            android:textColor="@color/text_primary"
+            app:icon="@drawable/ic_contacts"
+            app:iconGravity="top"
+            app:iconTint="@color/icon_tint"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>
 
-</LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/feedButton"
+            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/background_card_light"
+            android:text="Campus Feed"
+            android:textColor="@color/text_primary"
+            app:icon="@drawable/ic_feed"
+            app:iconGravity="top"
+            app:iconTint="@color/icon_tint"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">SRM-CampusSaftey</string>
+    <string name="app_name">Campus Safety</string>
+    <string name="accessibility_service_description">This service allows the Campus Safety app to detect when you press the Volume Down key 3 times to send an SOS alert. The app does not watch what you type or see any of your screen content.</string>
 </resources>
+

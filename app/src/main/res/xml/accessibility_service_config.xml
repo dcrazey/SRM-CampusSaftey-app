@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This configuration file tells the Android system what our
+SOSAccessibilityService wants to do. We are "requesting"
+to listen for key events (like the volume button).
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeViewClicked|typeViewFocused|typeViewLongClicked|typeWindowContentChanged|typeWindowStateChanged|typeNotificationStateChanged|typeViewTextChanged|typeViewHoverEnter|typeViewHoverExit|typeViewScrolled|typeViewSelected|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault|flagIncludeNotImportantViews|flagReportViewIds|flagRetrieveInteractiveWindows"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="100" />
+
