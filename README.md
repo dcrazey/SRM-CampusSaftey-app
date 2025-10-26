@@ -1,92 +1,108 @@
-Campus Safety App - A Native Android Application
-A student project focused on enhancing safety for students on campus through a one-click SOS alert system. This repository contains the initial prototype (30% completion) of the application.
+SRM Campus Safety App
 
-🚩 Project Overview
-Students, especially those living in hostels or studying late at night, often face safety concerns ranging from harassment to medical emergencies. The Campus Safety App is designed to be a quick and reliable tool to bridge the gap between a student in distress and immediate help.
+A native Android application developed for the 21CSC203P - Advanced Programming Practice course at SRM Institute of Science & Technology.
 
-The core feature is a one-click Emergency SOS button that, upon activation, will automatically send an alert with the user's live GPS location to campus security, wardens, and a list of trusted contacts.
+This app provides students with essential safety tools, including a one-click SOS alert with GPS location sent via SMS, emergency contact management, a local campus incident feed, and a discreet hardware button shortcut for emergencies.
 
-📱 Prototype Showcase (30% Milestone)
-This initial version of the app establishes the foundational structure, user interface, and core logic connections.
+Team Members:
 
-(Replace this with a screenshot of your app running in the emulator)
+DITO DILEEP [RA2411026010050] - Lead Developer
 
-What's Working in this Prototype:
-Main User Interface: The app's main screen is fully designed using Android XML, featuring a clean layout with three primary buttons: SOS, Safe-Walk, and Incident Report.
+SUJAI JAIDEEP [RA2411026010008] - Presentation & Documentation
 
-Core Java Logic: The MainActivity.java file is set up to control the UI elements.
+CYAN BENNY [RA2411026010012] - Testing & Portfolio Management
 
-Interactive SOS Button: The SOS button is fully functional. When clicked, it displays a confirmation "Toast" message (SOS Activated! Alerting authorities...), demonstrating that the UI (XML) and the application logic (Java) are successfully linked.
+Supervisor: Dr. M. Salomi
 
-Organized Project Structure: The project includes organized resource files for colors, styles (themes), and drawable assets, which is a best practice for scalable Android development.
+Features
 
-🛠️ Technology Stack
-Platform: Native Android
+One-Click SOS: Prominent SOS button on the main screen. Fetches current GPS location and sends an SMS alert (including a Google Maps link) to designated emergency contacts.
+
+Emergency Contacts: Users can add, view, and delete trusted contacts (name and phone number) within the app. Contacts are saved locally on the device.
+
+Campus Feed: A simple feed where users can post incident reports (title and description) and view posts made on their device. Data is stored locally using SharedPreferences.
+
+Volume Button Shortcut: Utilizes Android's Accessibility Service (requires user permission) to detect three quick presses of the Volume Down button. Triggers an SOS SMS alert without location for faster, discreet activation.
+
+Permissions Handling: Gracefully requests necessary permissions (Fine Location, Send SMS) on startup and guides the user if permissions are denied.
+
+Accessibility Service Prompt: Guides the user to enable the required Accessibility Service in system settings to activate the volume button shortcut.
+
+Clean UI: Minimalistic and professional user interface designed for ease of use.
+
+Technology Stack
 
 Language: Java
 
 IDE: Android Studio
 
-UI: XML (eXtensible Markup Language)
+UI: XML Layouts, Material Components
+
+Platform: Native Android
+
+APIs:
+
+Android Location Services (FusedLocationProviderClient)
+
+Android Telephony (SmsManager)
+
+Android Accessibility Service
+
+Libraries:
+
+Google Play Services Location (com.google.android.gms:play-services-location)
+
+Gson (com.google.code.gson:gson)
+
+AndroidX (AppCompat, RecyclerView, Material)
+
+Storage: SharedPreferences (for contacts and feed posts)
 
 Build System: Gradle
 
-🚀 How to Run This Project
-To run this prototype on your machine, follow these steps:
+How to Build and Run
 
-Clone the repository:
+Clone the Repository:
 
-git clone [https://github.com/your-username/campus-safety-app.git](https://github.com/your-username/campus-safety-app.git)
+git clone [https://github.com/dcrazey/SRM-CampusSaftey-app.git](https://github.com/dcrazey/SRM-CampusSaftey-app.git)
 
-Open in Android Studio:
 
-Launch Android Studio.
+Open in Android Studio: Open the cloned project folder in the latest stable version of Android Studio.
 
-Select File > Open and navigate to the cloned project directory.
+Sync Gradle: Allow Android Studio to sync the project and download dependencies.
 
-Sync Gradle:
+Connect Device/Emulator: Connect a physical Android device (recommended for testing SMS) or start an emulator.
 
-Android Studio will automatically start syncing the project's Gradle files. Wait for it to complete.
+Run the App: Click the Run button (▶️).
 
-Set up an Emulator:
+Grant Permissions: When the app starts, it will request Location and SMS permissions. You must grant these for the SOS features to work.
 
-Go to Tools > Device Manager.
+Enable Accessibility Service:
 
-Create a new virtual device (e.g., Pixel 6 with API 33).
+The app will prompt you to enable the Accessibility Service for the volume button shortcut.
 
-Run the App:
+Click "Go to Settings".
 
-Select the created emulator from the device dropdown menu.
+In your device's Accessibility settings, find "Campus Safety" (it might be under "Downloaded apps" or similar).
 
-Click the green play button (▶️) to build and run the application.
+Turn the service ON and confirm any system warnings. This is required for the volume shortcut.
 
-🗺️ Project Roadmap
-This prototype represents the first 30% of the project. The next steps are:
+Add Contacts: Go to "My Contacts" within the app to add emergency numbers.
 
-[ ] (40%) Core SOS Functionality:
+Test:
 
-[ ] Request User Permissions (GPS Location, Send SMS).
+Press the main SOS button (requires permissions).
 
-[ ] Integrate Android's Location Services to fetch the device's live coordinates.
+Press Volume Down three times quickly (requires Accessibility Service enabled).
 
-[ ] Implement SMS functionality to send the alert message and location to contacts.
+Post an item to the Campus Feed.
 
-[ ] (30%) Feature Finalization:
+Future Scope
 
-[ ] Develop the "Safe-Walk" feature for live location sharing with a friend.
+Integrate Firebase Firestore for a shared Campus Feed and cloud backup of contacts.
 
-[ ] Build the UI and backend logic for the "Incident Reporting" form.
+Implement a "Safe-Walk" feature with real-time location sharing (using Firebase).
 
-[ ] Conduct thorough testing and debugging across different devices.
+Add user authentication (Firebase Auth).
 
-👥 Our Team
-This project is a collaborative effort by:
-
-Dito Dileep (RA2411026010050) - Lead Android Developer (App Building & Coding)
-
-Cyan Benny (RA2411026010012) - Project Management & Presentation
-
-Sujai Jaideep (RA2411026010008) - Research & Presentation
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+Integrate with official campus security systems via API (if available).
